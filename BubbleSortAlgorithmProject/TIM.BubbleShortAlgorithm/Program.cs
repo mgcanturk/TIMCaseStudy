@@ -10,13 +10,18 @@ services.AddScoped<IBubbleSort, BubbleSort>())
 
 Test(host.Services);
 await host.RunAsync();
+
 static void Test(IServiceProvider services)
 {
     using IServiceScope serviceScope = services.CreateScope();
     IServiceProvider provider = serviceScope.ServiceProvider;
     IBubbleSort service = provider.GetService<IBubbleSort>();
+
     int[] array = { 11, 93, 45, 98, 13, 55 };
+
     service.BubbleSortWithoutAnyOptimization(array);
     service.BubbleSortWithOptimization_V1(array);
+    service.BubbleSortWithOptimization_V2(array);
+
     Console.ReadKey();
 }
