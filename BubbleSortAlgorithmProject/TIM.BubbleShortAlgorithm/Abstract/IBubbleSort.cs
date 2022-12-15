@@ -9,5 +9,6 @@ namespace TIM.BubbleShortAlgorithm.Abstract
     public interface IBubbleSort
     {
         void BubbleSortWithoutAnyOptimization(int[] array);
+        void BubbleSortWithOptimization_V1(int[] array);
     }
 }

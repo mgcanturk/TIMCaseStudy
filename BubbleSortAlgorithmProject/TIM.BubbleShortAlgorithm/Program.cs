@@ -17,5 +17,6 @@ static void Test(IServiceProvider services)
     IBubbleSort service = provider.GetService<IBubbleSort>();
     int[] array = { 11, 93, 45, 98, 13, 55 };
     service.BubbleSortWithoutAnyOptimization(array);
+    service.BubbleSortWithOptimization_V1(array);
     Console.ReadKey();
 }
