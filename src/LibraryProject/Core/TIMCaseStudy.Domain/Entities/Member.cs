@@ -9,8 +9,8 @@ namespace TIMCaseStudy.Domain.Entities
 {
     public sealed class Member : BaseEntity
     {
-        public string Name { get; set; }
+        public string NameSurname { get; set; }
         public int Age { get; set; }
-        public string Address { get; set; }
+        public string City { get; set; }
     }
 }

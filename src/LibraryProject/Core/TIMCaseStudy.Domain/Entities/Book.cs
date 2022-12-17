@@ -14,7 +14,7 @@ namespace TIMCaseStudy.Domain.Entities
         public string ISBN { get; set; }
         public string Publisher { get; set; }
         public bool IsAvailable { get; set; }
-        public Category Category { get; set; }
-        public ICollection<Author> Authors { get; set; }
+        public int CategoryId { get; set; }
+        public int AuthorId { get; set; }
     }
 }

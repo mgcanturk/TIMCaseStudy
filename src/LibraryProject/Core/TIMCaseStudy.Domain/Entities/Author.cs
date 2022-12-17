@@ -9,7 +9,7 @@ namespace TIMCaseStudy.Domain.Entities
 {
     public sealed class Author : BaseEntity
     {
-        public string Name { get; set; }
+        public string NameSurname { get; set; }
         public ICollection<Book> Books { get; set; }
     }
 }
