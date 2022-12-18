@@ -13,7 +13,7 @@ namespace TIMCaseStudy.Persistence
 {
     public static class ServiceRegistration
     {
-        public static void AddPersistenceServices(this IServiceCollection services)
+        public static IServiceCollection AddPersistenceServicesRegistration(this IServiceCollection services)
         {
             services.AddDbContext<TIMCaseStudyDbContext>(opt => opt.UseSqlServer(Configuration.ConnectionString));
 
@@ -28,6 +28,8 @@ namespace TIMCaseStudy.Persistence
             services.AddScoped<IBookTransactionWriteRepository, BookTransactionWriteRepository>();
             services.AddScoped<ICategoryWriteRepository, CategoryWriteRepository>();
             services.AddScoped<IMemberWriteRepository, MemberWriteRepository>();
+
+            return services;
         }
     }
 }

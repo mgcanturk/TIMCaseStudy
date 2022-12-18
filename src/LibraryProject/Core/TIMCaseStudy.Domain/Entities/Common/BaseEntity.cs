@@ -9,8 +9,9 @@ namespace TIMCaseStudy.Domain.Entities.Common
 {
     public abstract class BaseEntity
     {
+        [Key]
         public int Id { get; set; }
         public DateTime CreateDateTime { get; set; }
-        public DateTime UpdateDateTime { get; set; }
+        public DateTime? UpdateDateTime { get; set; }
     }
 }

@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TIMCaseStudy.Application.Repositories;
+using TIMCaseStudy.Common.Models.Queries;
+using TIMCaseStudy.Common.Models.RequestModels;
 
 namespace TIMCaseStudy.API.Controllers
 {
@@ -8,34 +11,25 @@ namespace TIMCaseStudy.API.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        private readonly IBookReadRepository _bookReadRepository;
-        private readonly IBookWriteRepository _bookWriteRepository;
-        public BookController(IBookReadRepository bookReadRepository, IBookWriteRepository bookWriteRepository)
+        private readonly IMediator _mediator;
+
+        public BookController(IMediator mediator)
         {
-            _bookReadRepository = bookReadRepository;
-            _bookWriteRepository = bookWriteRepository;
+            _mediator = mediator;
         }
-        [HttpGet]
-        public async Task<IActionResult> Get()
+        [HttpPost]
+        [Route("BookFilter")]
+        public async Task<IActionResult> BookFilter([FromBody] BookFilterCommand command)
         {
-            await _bookWriteRepository.AddAsync(new() {
-                Name = "Test Kitap",
-                ISBN = "12345678911",
-                Publisher = "Pegasus Yayınları",
-                IsAvailable = true,
-                CategoryId = 4,
-                AuthorId = 1,
-                CreateDateTime = DateTime.Now,
-                UpdateDateTime = DateTime.Now
-            });
-            int count = await _bookWriteRepository.SaveAsync();
-            return Ok(count);
+            var result = await _mediator.Send(command);
+            return Ok(result);
         }
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
-        { 
-            var GetData = await _bookReadRepository.GetByIdAsync(id, false);
-            return Ok(GetData);
+        [HttpPost]
+        [Route("BookTransaction")]
+        public async Task<IActionResult> BookTransaction([FromBody] CreateBookTransactionCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
         }
     }
 }
