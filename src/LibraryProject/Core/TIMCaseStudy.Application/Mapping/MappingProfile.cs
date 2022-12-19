@@ -20,6 +20,8 @@ namespace TIMCaseStudy.Application.Mapping
 
             CreateMap<CreateBookTransactionCommand, BookTransaction>()
                 .ForMember(dest => dest.ReturnDate, opt => opt.MapFrom(src => DateTime.Parse(src.ReturnDate)));
+
+            CreateMap<Author, AuthorViewModel>();
         }
     }
 }

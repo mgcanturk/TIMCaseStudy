@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TIMCaseStudy.API", "src\Lib
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{9D6EFD93-E04D-4520-89EB-3C91B4834840}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIMCaseStudy.Common", "src\Common\TIMCaseStudy.Common\TIMCaseStudy.Common.csproj", "{EB1F0263-CCCA-4580-990D-C89FB90EE01D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TIMCaseStudy.Common", "src\Common\TIMCaseStudy.Common\TIMCaseStudy.Common.csproj", "{EB1F0263-CCCA-4580-990D-C89FB90EE01D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

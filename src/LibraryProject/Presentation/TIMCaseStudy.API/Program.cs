@@ -12,7 +12,7 @@ builder.Services.AddApplicationServicesRegistration();
 
 // Add Policy
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
-    policy.WithOrigins("http://localhost:4200", "https://localhost:4200").AllowAnyHeader().AllowAnyMethod().AllowCredentials()
+    policy.WithOrigins("*", "*").AllowAnyHeader().AllowAnyMethod().AllowCredentials()
 ));
 
 builder.Services.AddControllers(options => {
@@ -35,7 +35,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.ConfigureExceptionHandler();
+//app.ConfigureExceptionHandler();
+app.ConfigureExceptionHandling(app.Environment.IsDevelopment());
 
 app.UseAuthorization();
 

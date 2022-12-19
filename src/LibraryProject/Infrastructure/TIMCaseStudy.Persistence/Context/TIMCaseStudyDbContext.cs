@@ -21,8 +21,6 @@ namespace TIMCaseStudy.Persistence.Context
         public DbSet<BookTransaction> BookTransactions { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-  
-
             modelBuilder.Entity<Book>()
                 .HasOne(b => b.Category)
                 .WithMany(c => c.Books)
@@ -42,9 +40,6 @@ namespace TIMCaseStudy.Persistence.Context
                 .HasOne(bt => bt.Member)
                 .WithMany(m => m.BookTransactions)
                 .HasForeignKey(bt => bt.MemberId);
-
-
-
 
             modelBuilder.Entity<Author>().HasData(
                 new Author { Id = 1, NameSurname = "Jane Austen", CreateDateTime = DateTime.Now, UpdateDateTime = DateTime.Now },
@@ -149,7 +144,7 @@ namespace TIMCaseStudy.Persistence.Context
                    BookId = 2,
                    MemberId = 2,
                    RetrieveDate = DateTime.Now.AddDays(-60),
-                   ReturnDate = DateTime.Now.AddDays(-10),
+                   ReturnDate = DateTime.Now.AddDays(-20),
                    IsLate = false,
                    IsReturn = false,
                    LateDay = 0,
@@ -162,8 +157,8 @@ namespace TIMCaseStudy.Persistence.Context
                    Id = 3,
                    BookId = 3,
                    MemberId = 3,
-                   RetrieveDate = DateTime.Now,
-                   ReturnDate = DateTime.Now.AddDays(1),
+                   RetrieveDate = DateTime.Now.AddDays(-35),
+                   ReturnDate = DateTime.Now.AddDays(-5),
                    IsLate = false,
                    IsReturn = false,
                    LateDay = 0,
@@ -176,8 +171,8 @@ namespace TIMCaseStudy.Persistence.Context
                    Id = 4,
                    BookId = 4,
                    MemberId = 4,
-                   RetrieveDate = DateTime.Now,
-                   ReturnDate = DateTime.Now.AddDays(-5),
+                   RetrieveDate = DateTime.Now.AddDays(-5),
+                   ReturnDate = DateTime.Now,
                    IsLate = false,
                    IsReturn = false,
                    LateDay = 0,
@@ -187,7 +182,12 @@ namespace TIMCaseStudy.Persistence.Context
                }
             );
 
-
+            //modelBuilder.Entity<AuthorBook>().HasData(
+            //    new AuthorBook
+            //    { 
+            //        AuthorId = 1,
+            //        BookId = 1,
+            //    });
 
 
 
