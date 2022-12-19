@@ -1,4 +1,6 @@
 using FluentValidation.AspNetCore;
+using TIMCaseStudy.API.Infrastructure.ActionFilters;
+using TIMCaseStudy.API.Infrastructure.Extensions;
 using TIMCaseStudy.Application;
 using TIMCaseStudy.Persistence;
 
@@ -8,7 +10,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddPersistenceServicesRegistration();
 builder.Services.AddApplicationServicesRegistration();
 
-builder.Services.AddControllers().AddFluentValidation();
+// Add Policy
+builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
+    policy.WithOrigins("http://localhost:4200", "https://localhost:4200").AllowAnyHeader().AllowAnyMethod().AllowCredentials()
+));
+
+builder.Services.AddControllers(options => {
+    options.Filters.Add<ValidateModelStateFilter>();
+})
+.AddFluentValidation();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -24,6 +34,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.ConfigureExceptionHandler();
 
 app.UseAuthorization();
 

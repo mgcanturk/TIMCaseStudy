@@ -12,7 +12,7 @@ using TIMCaseStudy.Persistence.Context;
 namespace TIMCaseStudy.Persistence.Migrations
 {
     [DbContext(typeof(TIMCaseStudyDbContext))]
-    [Migration("20221218214019_mig_1")]
+    [Migration("20221219143545_mig_1")]
     partial class mig1
     {
         /// <inheritdoc />
@@ -55,7 +55,7 @@ namespace TIMCaseStudy.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdateDateTime")
+                    b.Property<DateTime?>("UpdateDateTime")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -66,37 +66,37 @@ namespace TIMCaseStudy.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8111),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2342),
                             NameSurname = "Jane Austen",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8121)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2356)
                         },
                         new
                         {
                             Id = 2,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8124),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2361),
                             NameSurname = "William Shakespeare",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8124)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2362)
                         },
                         new
                         {
                             Id = 3,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8125),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2364),
                             NameSurname = "Charles Dickens",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8126)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2364)
                         },
                         new
                         {
                             Id = 4,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8127),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2366),
                             NameSurname = "Mark Twain",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8128)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2366)
                         },
                         new
                         {
                             Id = 5,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8129),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2367),
                             NameSurname = "Oscar Wilde",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8130)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2368)
                         });
                 });
 
@@ -129,7 +129,7 @@ namespace TIMCaseStudy.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdateDateTime")
+                    b.Property<DateTime?>("UpdateDateTime")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -143,56 +143,56 @@ namespace TIMCaseStudy.Persistence.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8345),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2576),
                             ISBN = "1234567890",
                             IsAvailable = true,
                             Name = "Gurur ve Önyargı",
                             Publisher = "Penguin Klasikleri",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8346)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2577)
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 2,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8347),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2580),
                             ISBN = "2345678901",
                             IsAvailable = true,
                             Name = "Hamlet",
                             Publisher = "Folger Shakespeare Library",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8348)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2580)
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 1,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8350),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2582),
                             ISBN = "3456789012",
                             IsAvailable = true,
                             Name = "Tale of Two Cities",
                             Publisher = "Penguin Classics",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8351)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2583)
                         },
                         new
                         {
                             Id = 4,
                             CategoryId = 1,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8353),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2584),
                             ISBN = "4567890123",
                             IsAvailable = true,
                             Name = "The Adventures of Tom Sawyer",
                             Publisher = "Penguin Classics",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8353)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2585)
                         },
                         new
                         {
                             Id = 5,
                             CategoryId = 1,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8355),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2586),
                             ISBN = "5678901234",
                             IsAvailable = true,
                             Name = "The Picture of Dorian Gray",
                             Publisher = "Penguin Classics",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8355)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2587)
                         });
                 });
 
@@ -213,6 +213,9 @@ namespace TIMCaseStudy.Persistence.Migrations
                     b.Property<bool>("IsLate")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsReturn")
+                        .HasColumnType("bit");
+
                     b.Property<int>("LateDay")
                         .HasColumnType("int");
 
@@ -228,7 +231,7 @@ namespace TIMCaseStudy.Persistence.Migrations
                     b.Property<DateTime>("ReturnDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("UpdateDateTime")
+                    b.Property<DateTime?>("UpdateDateTime")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -244,53 +247,57 @@ namespace TIMCaseStudy.Persistence.Migrations
                         {
                             Id = 1,
                             BookId = 1,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8419),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2660),
                             IsLate = false,
+                            IsReturn = false,
                             LateDay = 0,
                             MemberId = 1,
                             Penalty = 0m,
-                            RetrieveDate = new DateTime(2022, 10, 30, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8411),
-                            ReturnDate = new DateTime(2022, 12, 21, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8417),
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8420)
+                            RetrieveDate = new DateTime(2022, 10, 30, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2651),
+                            ReturnDate = new DateTime(2022, 12, 21, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2656),
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2661)
                         },
                         new
                         {
                             Id = 2,
                             BookId = 2,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8424),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2665),
                             IsLate = false,
+                            IsReturn = false,
                             LateDay = 0,
                             MemberId = 2,
                             Penalty = 0m,
-                            RetrieveDate = new DateTime(2022, 10, 20, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8421),
-                            ReturnDate = new DateTime(2022, 12, 9, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8422),
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8424)
+                            RetrieveDate = new DateTime(2022, 10, 20, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2662),
+                            ReturnDate = new DateTime(2022, 12, 9, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2663),
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2666)
                         },
                         new
                         {
                             Id = 3,
                             BookId = 3,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8427),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2668),
                             IsLate = false,
+                            IsReturn = false,
                             LateDay = 0,
                             MemberId = 3,
                             Penalty = 0m,
-                            RetrieveDate = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8425),
-                            ReturnDate = new DateTime(2022, 12, 20, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8426),
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8427)
+                            RetrieveDate = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2667),
+                            ReturnDate = new DateTime(2022, 12, 20, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2667),
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2669)
                         },
                         new
                         {
                             Id = 4,
                             BookId = 4,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8430),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2672),
                             IsLate = false,
+                            IsReturn = false,
                             LateDay = 0,
                             MemberId = 4,
                             Penalty = 0m,
-                            RetrieveDate = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8428),
-                            ReturnDate = new DateTime(2022, 12, 14, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8429),
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8430)
+                            RetrieveDate = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2670),
+                            ReturnDate = new DateTime(2022, 12, 14, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2671),
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2673)
                         });
                 });
 
@@ -309,7 +316,7 @@ namespace TIMCaseStudy.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdateDateTime")
+                    b.Property<DateTime?>("UpdateDateTime")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -320,37 +327,37 @@ namespace TIMCaseStudy.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8309),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2538),
                             Name = "Roman",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8310)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2540)
                         },
                         new
                         {
                             Id = 2,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8313),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2544),
                             Name = "Dram",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8313)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2545)
                         },
                         new
                         {
                             Id = 3,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8314),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2546),
                             Name = "Tarih",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8315)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2547)
                         },
                         new
                         {
                             Id = 4,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8316),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2548),
                             Name = "Bilim Kurgu",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8317)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2549)
                         },
                         new
                         {
                             Id = 5,
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8318),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2550),
                             Name = "Çocuk Kitabı",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8318)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2550)
                         });
                 });
 
@@ -377,7 +384,7 @@ namespace TIMCaseStudy.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdateDateTime")
+                    b.Property<DateTime?>("UpdateDateTime")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -389,46 +396,46 @@ namespace TIMCaseStudy.Persistence.Migrations
                         {
                             Id = 1,
                             Address = "123 Main St",
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8380),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2615),
                             Name = "John Smith",
                             Phone = "123-456-7890",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8381)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2616)
                         },
                         new
                         {
                             Id = 2,
                             Address = "456 Park Ave",
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8383),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2619),
                             Name = "Jane Doe",
                             Phone = "456-789-0123",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8384)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2619)
                         },
                         new
                         {
                             Id = 3,
                             Address = "789 Main St",
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8385),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2623),
                             Name = "Ahmet Yılmaz",
                             Phone = "789-123-4567",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8385)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2623)
                         },
                         new
                         {
                             Id = 4,
                             Address = "246 Park Ave",
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8387),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2625),
                             Name = "Fatma Öztürk",
                             Phone = "246-789-0123",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8387)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2625)
                         },
                         new
                         {
                             Id = 5,
                             Address = "369 Main St",
-                            CreateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8388),
+                            CreateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2627),
                             Name = "Mehmet Kaya",
                             Phone = "369-123-4567",
-                            UpdateDateTime = new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8389)
+                            UpdateDateTime = new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2628)
                         });
                 });
 

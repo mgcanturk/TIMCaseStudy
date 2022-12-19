@@ -137,6 +137,7 @@ namespace TIMCaseStudy.Persistence.Context
                    RetrieveDate = DateTime.Now.AddDays(-50),
                    ReturnDate = DateTime.Now.AddDays(2),
                    IsLate = false,
+                   IsReturn = false,
                    LateDay = 0,
                    Penalty = 0,
                    CreateDateTime = DateTime.Now,
@@ -150,6 +151,7 @@ namespace TIMCaseStudy.Persistence.Context
                    RetrieveDate = DateTime.Now.AddDays(-60),
                    ReturnDate = DateTime.Now.AddDays(-10),
                    IsLate = false,
+                   IsReturn = false,
                    LateDay = 0,
                    Penalty = 0,
                    CreateDateTime = DateTime.Now,
@@ -163,6 +165,7 @@ namespace TIMCaseStudy.Persistence.Context
                    RetrieveDate = DateTime.Now,
                    ReturnDate = DateTime.Now.AddDays(1),
                    IsLate = false,
+                   IsReturn = false,
                    LateDay = 0,
                    Penalty = 0,
                    CreateDateTime = DateTime.Now,
@@ -176,13 +179,14 @@ namespace TIMCaseStudy.Persistence.Context
                    RetrieveDate = DateTime.Now,
                    ReturnDate = DateTime.Now.AddDays(-5),
                    IsLate = false,
+                   IsReturn = false,
                    LateDay = 0,
                    Penalty = 0,
                    CreateDateTime = DateTime.Now,
                    UpdateDateTime = DateTime.Now
                }
             );
-          
+
 
 
 

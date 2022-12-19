@@ -17,6 +17,7 @@ namespace TIMCaseStudy.Domain.Entities
         public int MemberId { get; set; }
         public DateTime RetrieveDate { get; set; }
         public DateTime ReturnDate { get; set; }
+        public bool IsReturn { get; set; }
         public bool IsLate { get; set; }
         public int LateDay { get; set; }
         public decimal Penalty { get; set; }

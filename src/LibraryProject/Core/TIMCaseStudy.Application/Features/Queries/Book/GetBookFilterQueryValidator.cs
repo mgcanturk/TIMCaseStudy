@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using TIMCaseStudy.Common.Models.RequestModels;
 
-namespace TIMCaseStudy.Application.Features.Commands.Book
+namespace TIMCaseStudy.Application.Features.Queries.Book
 {
-    public class BookFilterCommandValidator:AbstractValidator<BookFilterCommand>
+    public class GetBookFilterQueryValidator : AbstractValidator<GetBookFilterQuery>
     {
-        public BookFilterCommandValidator()
+        public GetBookFilterQueryValidator()
         {
             RuleFor(x => x.Author)
                .NotEmpty()

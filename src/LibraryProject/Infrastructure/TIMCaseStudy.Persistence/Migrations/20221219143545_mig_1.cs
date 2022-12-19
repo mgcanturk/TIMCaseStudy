@@ -21,7 +21,7 @@ namespace TIMCaseStudy.Persistence.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NameSurname = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreateDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdateDateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UpdateDateTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -36,7 +36,7 @@ namespace TIMCaseStudy.Persistence.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreateDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdateDateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UpdateDateTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -53,7 +53,7 @@ namespace TIMCaseStudy.Persistence.Migrations
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreateDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdateDateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UpdateDateTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -72,7 +72,7 @@ namespace TIMCaseStudy.Persistence.Migrations
                     IsAvailable = table.Column<bool>(type: "bit", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     CreateDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdateDateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UpdateDateTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -119,11 +119,12 @@ namespace TIMCaseStudy.Persistence.Migrations
                     MemberId = table.Column<int>(type: "int", nullable: false),
                     RetrieveDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ReturnDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsReturn = table.Column<bool>(type: "bit", nullable: false),
                     IsLate = table.Column<bool>(type: "bit", nullable: false),
                     LateDay = table.Column<int>(type: "int", nullable: false),
                     Penalty = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     CreateDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdateDateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UpdateDateTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -147,11 +148,11 @@ namespace TIMCaseStudy.Persistence.Migrations
                 columns: new[] { "Id", "CreateDateTime", "NameSurname", "UpdateDateTime" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8111), "Jane Austen", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8121) },
-                    { 2, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8124), "William Shakespeare", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8124) },
-                    { 3, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8125), "Charles Dickens", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8126) },
-                    { 4, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8127), "Mark Twain", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8128) },
-                    { 5, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8129), "Oscar Wilde", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8130) }
+                    { 1, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2342), "Jane Austen", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2356) },
+                    { 2, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2361), "William Shakespeare", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2362) },
+                    { 3, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2364), "Charles Dickens", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2364) },
+                    { 4, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2366), "Mark Twain", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2366) },
+                    { 5, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2367), "Oscar Wilde", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2368) }
                 });
 
             migrationBuilder.InsertData(
@@ -159,11 +160,11 @@ namespace TIMCaseStudy.Persistence.Migrations
                 columns: new[] { "Id", "CreateDateTime", "Name", "UpdateDateTime" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8309), "Roman", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8310) },
-                    { 2, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8313), "Dram", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8313) },
-                    { 3, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8314), "Tarih", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8315) },
-                    { 4, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8316), "Bilim Kurgu", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8317) },
-                    { 5, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8318), "Çocuk Kitabı", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8318) }
+                    { 1, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2538), "Roman", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2540) },
+                    { 2, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2544), "Dram", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2545) },
+                    { 3, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2546), "Tarih", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2547) },
+                    { 4, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2548), "Bilim Kurgu", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2549) },
+                    { 5, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2550), "Çocuk Kitabı", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2550) }
                 });
 
             migrationBuilder.InsertData(
@@ -171,11 +172,11 @@ namespace TIMCaseStudy.Persistence.Migrations
                 columns: new[] { "Id", "Address", "CreateDateTime", "Name", "Phone", "UpdateDateTime" },
                 values: new object[,]
                 {
-                    { 1, "123 Main St", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8380), "John Smith", "123-456-7890", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8381) },
-                    { 2, "456 Park Ave", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8383), "Jane Doe", "456-789-0123", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8384) },
-                    { 3, "789 Main St", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8385), "Ahmet Yılmaz", "789-123-4567", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8385) },
-                    { 4, "246 Park Ave", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8387), "Fatma Öztürk", "246-789-0123", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8387) },
-                    { 5, "369 Main St", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8388), "Mehmet Kaya", "369-123-4567", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8389) }
+                    { 1, "123 Main St", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2615), "John Smith", "123-456-7890", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2616) },
+                    { 2, "456 Park Ave", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2619), "Jane Doe", "456-789-0123", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2619) },
+                    { 3, "789 Main St", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2623), "Ahmet Yılmaz", "789-123-4567", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2623) },
+                    { 4, "246 Park Ave", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2625), "Fatma Öztürk", "246-789-0123", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2625) },
+                    { 5, "369 Main St", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2627), "Mehmet Kaya", "369-123-4567", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2628) }
                 });
 
             migrationBuilder.InsertData(
@@ -183,22 +184,22 @@ namespace TIMCaseStudy.Persistence.Migrations
                 columns: new[] { "Id", "CategoryId", "CreateDateTime", "ISBN", "IsAvailable", "Name", "Publisher", "UpdateDateTime" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8345), "1234567890", true, "Gurur ve Önyargı", "Penguin Klasikleri", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8346) },
-                    { 2, 2, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8347), "2345678901", true, "Hamlet", "Folger Shakespeare Library", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8348) },
-                    { 3, 1, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8350), "3456789012", true, "Tale of Two Cities", "Penguin Classics", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8351) },
-                    { 4, 1, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8353), "4567890123", true, "The Adventures of Tom Sawyer", "Penguin Classics", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8353) },
-                    { 5, 1, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8355), "5678901234", true, "The Picture of Dorian Gray", "Penguin Classics", new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8355) }
+                    { 1, 1, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2576), "1234567890", true, "Gurur ve Önyargı", "Penguin Klasikleri", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2577) },
+                    { 2, 2, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2580), "2345678901", true, "Hamlet", "Folger Shakespeare Library", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2580) },
+                    { 3, 1, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2582), "3456789012", true, "Tale of Two Cities", "Penguin Classics", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2583) },
+                    { 4, 1, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2584), "4567890123", true, "The Adventures of Tom Sawyer", "Penguin Classics", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2585) },
+                    { 5, 1, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2586), "5678901234", true, "The Picture of Dorian Gray", "Penguin Classics", new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2587) }
                 });
 
             migrationBuilder.InsertData(
                 table: "BookTransactions",
-                columns: new[] { "Id", "BookId", "CreateDateTime", "IsLate", "LateDay", "MemberId", "Penalty", "RetrieveDate", "ReturnDate", "UpdateDateTime" },
+                columns: new[] { "Id", "BookId", "CreateDateTime", "IsLate", "IsReturn", "LateDay", "MemberId", "Penalty", "RetrieveDate", "ReturnDate", "UpdateDateTime" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8419), false, 0, 1, 0m, new DateTime(2022, 10, 30, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8411), new DateTime(2022, 12, 21, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8417), new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8420) },
-                    { 2, 2, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8424), false, 0, 2, 0m, new DateTime(2022, 10, 20, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8421), new DateTime(2022, 12, 9, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8422), new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8424) },
-                    { 3, 3, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8427), false, 0, 3, 0m, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8425), new DateTime(2022, 12, 20, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8426), new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8427) },
-                    { 4, 4, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8430), false, 0, 4, 0m, new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8428), new DateTime(2022, 12, 14, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8429), new DateTime(2022, 12, 19, 0, 40, 18, 697, DateTimeKind.Local).AddTicks(8430) }
+                    { 1, 1, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2660), false, false, 0, 1, 0m, new DateTime(2022, 10, 30, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2651), new DateTime(2022, 12, 21, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2656), new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2661) },
+                    { 2, 2, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2665), false, false, 0, 2, 0m, new DateTime(2022, 10, 20, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2662), new DateTime(2022, 12, 9, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2663), new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2666) },
+                    { 3, 3, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2668), false, false, 0, 3, 0m, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2667), new DateTime(2022, 12, 20, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2667), new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2669) },
+                    { 4, 4, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2672), false, false, 0, 4, 0m, new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2670), new DateTime(2022, 12, 14, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2671), new DateTime(2022, 12, 19, 17, 35, 45, 60, DateTimeKind.Local).AddTicks(2673) }
                 });
 
             migrationBuilder.CreateIndex(

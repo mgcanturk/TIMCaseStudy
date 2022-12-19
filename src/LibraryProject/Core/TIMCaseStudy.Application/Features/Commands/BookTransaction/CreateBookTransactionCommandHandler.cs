@@ -47,13 +47,16 @@ namespace TIMCaseStudy.Application.Features.Commands.BookTransaction
                 throw new DatabaseValidationException("The member does not exist.");
 
 
-            var controlData = await _bookTransactionReadRepository.GetSingleAsync(x => x.Book.ISBN == request.ISBN && x.Member.Id == request.MemberId, false);
+            var controlData = await _bookTransactionReadRepository.GetSingleAsync(x => x.Book.ISBN == request.ISBN && x.Member.Id == request.MemberId && x.IsReturn == false, false);
             if(controlData is not null)
                 throw new DatabaseValidationException("This data exists in the database!");
-
           
             var dbTransaction = _mapper.Map<Domain.Entities.BookTransaction>(request);
+            if(dbTransaction.ReturnDate > DateTime.Now.AddDays(30))
+                throw new DatabaseValidationException("Return date cannot exceed 30 days!");
+
             dbTransaction.RetrieveDate = DateTime.Now;
+            dbTransaction.IsReturn = false;
             dbTransaction.ReturnDate = CalculateReturnDate(dbTransaction.ReturnDate);
             dbTransaction.BookId = getBookData.Id;
 

@@ -13,20 +13,20 @@ using TIMCaseStudy.Common.Infrastructure.Exceptions;
 using TIMCaseStudy.Common.Models.Queries;
 using TIMCaseStudy.Common.Models.RequestModels;
 
-namespace TIMCaseStudy.Application.Features.Commands.Book
+namespace TIMCaseStudy.Application.Features.Queries.Book
 {
-    public class BookFilterCommandHandler : IRequestHandler<BookFilterCommand, List<BookFilterViewModel>>
+    public class GetBookFilterQueryHandler : IRequestHandler<GetBookFilterQuery, List<BookFilterViewModel>>
     {
         private readonly IBookReadRepository _bookReadRepository;
         private readonly IMapper _mapper;
 
-        public BookFilterCommandHandler(IBookReadRepository bookReadRepository, IMapper mapper)
+        public GetBookFilterQueryHandler(IBookReadRepository bookReadRepository, IMapper mapper)
         {
             _bookReadRepository = bookReadRepository;
             _mapper = mapper;
         }
 
-        public async Task<List<BookFilterViewModel>> Handle(BookFilterCommand request, CancellationToken cancellationToken)
+        public async Task<List<BookFilterViewModel>> Handle(GetBookFilterQuery request, CancellationToken cancellationToken)
         {
             var query = _bookReadRepository.GetAll(false)
             .Include(b => b.Category)

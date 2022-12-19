@@ -22,8 +22,4 @@
     <ProjectReference Include="..\TIMCaseStudy.Domain\TIMCaseStudy.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Queries\" />
-  </ItemGroup>
-
 </Project>
